@@ -30,13 +30,6 @@ export function AppSidebar() {
 
         <SidebarMenuButton className="pb-3">
           <a href="" className="flex items-center text-xl gap-2">
-            <Cog color="white" />
-            <p className="text-white">Configurações</p>
-          </a>
-        </SidebarMenuButton>
-
-        <SidebarMenuButton className="pb-3">
-          <a href="" className="flex items-center text-xl gap-2">
             <User color="white" />
             <p className="text-white">Usuários</p>
           </a>
