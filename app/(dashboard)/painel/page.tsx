@@ -1,8 +1,6 @@
 import { redirect } from "next/navigation";
-
-import { LogoutButton } from "@/components/logout-button";
 import { createClient } from "@/lib/server";
-import DropDownMenuUser from "@/components/dropdown-menu-user";
+import DropDownMenuUser from "@/components/navigation-menu-user";
 
 export default async function ProtectedPage() {
   const supabase = await createClient();
@@ -13,8 +11,14 @@ export default async function ProtectedPage() {
   }
 
   return (
-    <div className="flex justify-end w-full gap-2">
-      <DropDownMenuUser />
+    <div className="w-full">
+      <div className="w-full p-0 flex justify-between">
+        <h1 className="text-black text-xl p-4">Bem vindo, </h1>
+        <DropDownMenuUser />
+      </div>
+      <div className="w-full">
+        <h1>Chamados</h1>
+      </div>
     </div>
   );
 }

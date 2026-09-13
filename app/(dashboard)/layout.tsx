@@ -12,7 +12,7 @@ export default function DashboardLayout({
       <SidebarProvider>
         {/* A Sidebar só existe AQUI dentro de (dashboard) */}
         <AppSidebar />
-        <main className="w-full p-6">{children}</main>
+        <main className="w-full">{children}</main>
       </SidebarProvider>
     </TooltipProvider>
   );
