@@ -1,5 +1,5 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 
 export default function DashboardLayout({
@@ -12,10 +12,7 @@ export default function DashboardLayout({
       <SidebarProvider>
         {/* A Sidebar só existe AQUI dentro de (dashboard) */}
         <AppSidebar />
-        <main className="w-full p-6">
-          <SidebarTrigger />
-          {children}
-        </main>
+        <main className="w-full p-6">{children}</main>
       </SidebarProvider>
     </TooltipProvider>
   );
