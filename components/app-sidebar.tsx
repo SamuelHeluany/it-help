@@ -22,7 +22,7 @@ export function AppSidebar() {
         </SidebarMenuButton>
 
         <SidebarMenuButton className="pb-3">
-          <a href="" className="flex items-center text-[20px] gap-2">
+          <a href="/tickets" className="flex items-center text-[20px] gap-2">
             <Ticket color="white" />
             <p className="text-white">Tickets</p>
           </a>
