@@ -1,5 +1,5 @@
 import { SidebarMenuButton } from "@/components/ui/sidebar";
-import { Cog, Plus, Ticket, User } from "lucide-react";
+import { LayoutGridIcon, Ticket, User } from "lucide-react";
 
 export function AppSidebar() {
   return (
@@ -15,9 +15,9 @@ export function AppSidebar() {
       </div>
       <div className="flex flex-col gap-2 p-2">
         <SidebarMenuButton className="pb-3">
-          <a href="" className="flex items-center text-xl gap-2">
-            <Plus color="white" />
-            <p className="text-white">Criar ticket</p>
+          <a href="/painel" className="flex items-center text-xl gap-2">
+            <LayoutGridIcon color="white" />
+            <p className="text-white">Painel</p>
           </a>
         </SidebarMenuButton>
 
