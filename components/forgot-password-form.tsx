@@ -101,7 +101,7 @@ export function ForgotPasswordForm({}: React.ComponentPropsWithoutRef<"div">) {
                 <div className="mt-4 text-center text-sm text-gray-400">
                   Já tem uma conta?{" "}
                   <Link
-                    href="/auth/login"
+                    href="/login"
                     className="underline underline-offset-4 text-[#6E6CDF]"
                   >
                     Entre aqui!
