@@ -4,7 +4,7 @@ import {
   HeaderSubtitle,
   HeaderTitle,
 } from "@/components/header";
-import TableColumn from "@/components/table-column";
+import TableColumn from "@/app/(dashboard)/tickets/_components/table-column";
 
 const Tickets = () => {
   return (
