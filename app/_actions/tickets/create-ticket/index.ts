@@ -1,22 +1,22 @@
 "use server";
 
-import { createClient } from "@/lib/server";
 import { createTicketsSchema, CreateTicketsSchema } from "./schema";
 import { revalidatePath } from "next/cache";
+import { createClient } from "@/lib/server";
 
 export const createTicketsAction = async (data: CreateTicketsSchema) => {
-  const supabase = await createClient();
-  const validatedData = createTicketsSchema.parse(data);
+  const tickets = await createClient();
   const {
     data: { user },
-  } = await supabase.auth.getUser();
-
+  } = await tickets.auth.getUser();
   if (!user) {
-    throw new Error("Usuário não autenticado");
+    return "Usuário não autenticado!";
   }
 
+  const validatedData = createTicketsSchema.parse(data);
+
   try {
-    await supabase
+    await tickets
       .from("tickets")
       .insert({
         ...validatedData,
