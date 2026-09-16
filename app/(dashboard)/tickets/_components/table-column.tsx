@@ -15,17 +15,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { createClient } from "@/lib/server";
 import DropdownMenuAction from "./dropdownmenu-action";
+import { getTickets } from "@/app/_data.access/tickets/get-tickets";
 
 const TableColumn = async () => {
-  const supabase = await createClient();
+  const { data: tickets } = await getTickets();
 
-  const { data: tickets, error } = await supabase.from("tickets").select("*");
-
-  if (error) {
-    return <div>Erro ao carregar: {error.message}</div>;
-  }
   return (
     <Table>
       <TableCaption>Lista de chamados</TableCaption>
