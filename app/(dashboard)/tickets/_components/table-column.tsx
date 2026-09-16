@@ -44,7 +44,7 @@ const TableColumn = async () => {
         {tickets?.map((ticket) => (
           <TableRow key={ticket.id}>
             <TableCell className="font-medium">{ticket.id}</TableCell>
-            <TableCell>{ticket.titulo}</TableCell>
+            <TableCell>{ticket.title}</TableCell>
             <TableCell>
               <Dialog>
                 <DialogTrigger
@@ -57,7 +57,7 @@ const TableColumn = async () => {
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle>Descrição do ticket</DialogTitle>
-                    <DialogDescription>{ticket.descricao}</DialogDescription>
+                    <DialogDescription>{ticket.description}</DialogDescription>
                   </DialogHeader>
                 </DialogContent>
               </Dialog>
