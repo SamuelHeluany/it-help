@@ -16,7 +16,7 @@ export const createTicketsAction = async (data: CreateTicketsSchema) => {
   }
 
   try {
-    const { data: ticket, error } = await supabase
+    await supabase
       .from("tickets")
       .insert({
         ...validatedData,
