@@ -4,9 +4,10 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Edit, EllipsisVertical } from "lucide-react";
+import { Edit, EllipsisVertical, TicketCheck } from "lucide-react";
 import DeleteTicket from "./delete-ticket";
 
 interface DropdownMenuActionProps {
@@ -24,7 +25,7 @@ const DropdownMenuAction = async ({ ticket }: DropdownMenuActionProps) => {
       >
         <EllipsisVertical />
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="w-40">
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <Edit />
@@ -33,6 +34,11 @@ const DropdownMenuAction = async ({ ticket }: DropdownMenuActionProps) => {
           <DropdownMenuItem
             render={<DeleteTicket id={ticket.id} />}
           ></DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem className="w-40">
+            <TicketCheck />
+            <span>Finalizar chamado</span>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
