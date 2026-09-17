@@ -1,7 +1,7 @@
 "use client";
 
-import { deleteTicket } from "@/app/_actions/tickets/create-ticket/delete-ticket";
-import { DeleteTicketSchema } from "@/app/_actions/tickets/create-ticket/delete-ticket/schema";
+import { deleteTicket } from "@/app/_actions/tickets/delete-ticket";
+import { DeleteTicketSchema } from "@/app/_actions/tickets/delete-ticket/schema";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,7 +13,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { Trash } from "lucide-react";
 
 const DeleteTicket = ({ id }: DeleteTicketSchema) => {
