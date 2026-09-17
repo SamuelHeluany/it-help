@@ -31,7 +31,6 @@ const TableColumn = async () => {
           <TableHead>Descrição</TableHead>
           <TableHead>Status</TableHead>
           <TableHead>Data de criação</TableHead>
-          <TableHead>Imagens em anexo</TableHead>
           <TableHead>Ações</TableHead>
         </TableRow>
       </TableHeader>
@@ -44,7 +43,7 @@ const TableColumn = async () => {
               <Dialog>
                 <DialogTrigger
                   render={
-                    <button className="bg-[#5C64E1] text-white w-30 h-7 rounded-sm cursor-pointer hover:bg-[#7982f5]">
+                    <button className="bg-[#5C64E1] text-white w-30 h-7 rounded-sm cursor-pointer hover:bg-[#4854f8]">
                       Ver descrição
                     </button>
                   }
@@ -60,23 +59,6 @@ const TableColumn = async () => {
             <TableCell>{ticket.status}</TableCell>
             <TableCell>
               {new Date(ticket.created_at).toLocaleDateString("pt-BR")}
-            </TableCell>
-            <TableCell>
-              <Dialog>
-                <DialogTrigger
-                  render={
-                    <button className="bg-[#5C64E1] text-white w-30 h-7 rounded-sm cursor-pointer hover:bg-[#7982f5]">
-                      Ver imagem
-                    </button>
-                  }
-                />
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Imagens em anexo</DialogTitle>
-                    <DialogDescription>{ticket.imagens}</DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
             </TableCell>
             <TableCell>
               <DropdownMenuAction ticket={ticket} />
