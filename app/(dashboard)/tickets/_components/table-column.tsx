@@ -79,7 +79,7 @@ const TableColumn = async () => {
               </Dialog>
             </TableCell>
             <TableCell>
-              <DropdownMenuAction />
+              <DropdownMenuAction ticket={ticket} />
             </TableCell>
           </TableRow>
         ))}
