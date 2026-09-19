@@ -1,5 +1,12 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/server";
+import {
+  Header,
+  HeaderLeft,
+  HeaderSubtitle,
+  HeaderTitle,
+} from "@/components/header";
+import TotalTickets from "./_components/total-tickets";
 
 export default async function ProtectedPage() {
   const supabase = await createClient();
@@ -10,10 +17,16 @@ export default async function ProtectedPage() {
   }
 
   return (
-    <div className="w-full">
-      <div className="w-full p-0 flex justify-between"></div>
-      <div className="w-full">
-        <h1>Chamados</h1>
+    <div className="m-8 flex w-full flex-col space-y-8 rounded-lg">
+      <Header>
+        <HeaderLeft>
+          <HeaderTitle>Painel</HeaderTitle>
+          <HeaderSubtitle>Visão geral dos tickets.</HeaderSubtitle>
+        </HeaderLeft>
+      </Header>
+
+      <div className=" grid grid-cols-3 gap-6">
+        <TotalTickets />
       </div>
     </div>
   );
