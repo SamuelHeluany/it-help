@@ -10,7 +10,7 @@ export const SummaryCardTitle = ({ children }: { children: ReactNode }) => {
 
 export const SummaryCardIcon = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="mb-1 flex h-9 w-9 items-center justify-center rounded-md bg-opacity-10 text-emerald-500">
+    <div className="flex h-9 w-9 items-center justify-center rounded-md bg-opacity-10 text-emerald-500">
       {children}
     </div>
   );
