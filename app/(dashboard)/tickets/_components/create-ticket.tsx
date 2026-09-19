@@ -25,6 +25,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
 
 interface CreateTicketProps {
   userId?: string;
@@ -54,8 +55,10 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
       await createTicketsAction(data);
       reset();
       setOpen(false);
+      toast.success("Ticket criado com sucesso!");
     } catch (error) {
       console.error("Erro ao criar ticket:", error);
+      toast.error("Erro ao criar ticket:");
     }
   };
 

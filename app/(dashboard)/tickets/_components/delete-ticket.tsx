@@ -14,16 +14,19 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Trash } from "lucide-react";
+import { toast } from "sonner";
 
 const DeleteTicket = ({ id }: DeleteTicketSchema) => {
   const handleDeleteTicket = async () => {
     if (!id) {
-      return alert("Não foi possível identificar o ticket.");
+      return toast.error("Não foi possível identificar o ticket.");
     }
     try {
       await deleteTicket({ id });
+      toast.success("Ticket deletado com sucesso!");
     } catch (error) {
-      console.error(error);
+      console.error("Erro ao deletar o ticket.", error);
+      toast.error("Erro ao deletar o ticket.");
     }
   };
 

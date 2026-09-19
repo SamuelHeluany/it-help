@@ -18,6 +18,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { updateTicket } from "@/app/_actions/tickets/edit-ticket";
 import { Input } from "@/components/ui/input";
 import { useEffect } from "react";
+import { toast } from "sonner";
 
 interface UpdateTicketProps {
   ticket: {
@@ -60,8 +61,10 @@ const UpdateTicket = ({ ticket, open, onOpenChange }: UpdateTicketProps) => {
       await updateTicket(data);
       reset();
       onOpenChange(false);
+      toast.success("Ticket atualizado com sucesso!");
     } catch (error) {
-      console.error("Erro ao atualizar ticket:", error);
+      console.error("Erro ao atualizar ticket.", error);
+      toast.error("Erro ao atualizar ticket.");
     }
   };
 

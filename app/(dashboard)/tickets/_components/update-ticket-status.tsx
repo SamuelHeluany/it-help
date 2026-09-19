@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { TicketCheck } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 interface UpdateTicketStatusProps {
   id: string;
@@ -28,6 +29,11 @@ const UpdateTicketStatus = ({ id, status }: UpdateTicketStatusProps) => {
     try {
       await updateTicketStatus({ id, status: nextStatus });
       setOpen(false);
+      toast.success(
+        status === "aberto"
+          ? "O ticket foi finalizado com sucesso!"
+          : "O ticket foi reaberto com sucesso!",
+      );
     } catch (error) {
       console.error(error);
     }
