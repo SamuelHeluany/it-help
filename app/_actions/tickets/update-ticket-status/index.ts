@@ -3,15 +3,18 @@ import { revalidatePath } from "next/cache";
 import { updateTicketStatusSchema, UpdateTicketStatusSchema } from "./schema";
 import { createClient } from "@/lib/server";
 
-export const updateTicketStatus = async ({ id }: UpdateTicketStatusSchema) => {
+export const updateTicketStatus = async ({
+  id,
+  status,
+}: UpdateTicketStatusSchema) => {
   const tickets = await createClient();
-  updateTicketStatusSchema.parse({ id });
+  updateTicketStatusSchema.parse({ id, status });
 
   try {
     const { error } = await tickets
       .from("tickets")
       .update({
-        status: "resolvido",
+        status: status,
         updated_at: new Date().toISOString(),
       })
       .eq("id", id);

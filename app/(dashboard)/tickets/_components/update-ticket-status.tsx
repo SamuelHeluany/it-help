@@ -23,12 +23,10 @@ interface UpdateTicketStatusProps {
 const UpdateTicketStatus = ({ id, status }: UpdateTicketStatusProps) => {
   const [open, setOpen] = useState(false);
   const handleUpdateStatusTicket = async () => {
-    if (status === "resolvido") {
-      return alert("Não pode resolver um ticket já resolvido!");
-    }
+    const nextStatus = status === "aberto" ? "resolvido" : "aberto";
 
     try {
-      await updateTicketStatus({ id });
+      await updateTicketStatus({ id, status: nextStatus });
       setOpen(false);
     } catch (error) {
       console.error(error);
@@ -40,15 +38,31 @@ const UpdateTicketStatus = ({ id, status }: UpdateTicketStatusProps) => {
         render={
           <button className="w-full flex pl-1 h-6 hover:bg-[#F5F5F5] rounded-sm items-center">
             <TicketCheck size={17} />
-            <span className="text-sm pl-1.25">Finalizar chamado</span>
+            <span className="text-sm pl-1.25">
+              {status === "aberto" ? "Finalizar ticket" : "Reabrir ticket"}
+            </span>
           </button>
         }
       />
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Deseja finalizar esse ticket?</AlertDialogTitle>
+          <AlertDialogTitle>
+            {status === "aberto" ? (
+              <p>Deseja finalizar o ticket?</p>
+            ) : (
+              <p>Deseja reabrir o ticket?</p>
+            )}
+          </AlertDialogTitle>
           <AlertDialogDescription>
-            O ticket será colocado como RESOLVIDO!
+            {status === "aberto" ? (
+              <p>
+                O ticket mudará seu status para <strong>RESOLVIDO!</strong>
+              </p>
+            ) : (
+              <p>
+                O ticket mudará seu status para <strong>ABERTO!</strong>
+              </p>
+            )}
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
