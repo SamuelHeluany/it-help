@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import Image from "next/image";
+import { Spinner } from "./ui/spinner";
 
 export function LoginForm({}: React.ComponentPropsWithoutRef<"div">) {
   const [email, setEmail] = useState("");
@@ -95,10 +96,16 @@ export function LoginForm({}: React.ComponentPropsWithoutRef<"div">) {
               {error && <p className="text-sm text-red-500">{error}</p>}
               <button
                 type="submit"
-                className="w-100 h-8 text-white bg-[#6E6CDF] text-[17px] cursor-pointer hover:bg-[#716ffc] rounded-sm"
+                className=" flex justify-center items-center w-100 h-8 text-white bg-[#6E6CDF] text-[16px] cursor-pointer hover:bg-[#716ffc] rounded-sm gap-1"
                 disabled={isLoading}
               >
-                {isLoading ? "Entrando..." : "Entrar"}
+                {isLoading ? (
+                  <>
+                    <Spinner className="h-5 w-4 items-center" /> Entrando...
+                  </>
+                ) : (
+                  "Entrar"
+                )}
               </button>
             </div>
             <div className="mt-4 text-center text-sm text-gray-400">

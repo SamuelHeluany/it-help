@@ -26,6 +26,7 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { Spinner } from "@/components/ui/spinner";
 
 interface CreateTicketProps {
   userId?: string;
@@ -130,9 +131,15 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-[#5C64E1] w-full text-white px-4 py-2 cursor-pointer rounded font-medium disabled:opacity-50 hover:bg-[#5157b1]"
+            className="flex justify-center items-center w-90 h-8 text-white bg-[#6E6CDF] text-[16px] cursor-pointer hover:bg-[#716ffc] rounded-sm gap-1"
           >
-            {isSubmitting ? "Enviando..." : "Criar Ticket"}
+            {isSubmitting ? (
+              <>
+                <Spinner className="h-5 w-4 items-center" /> Criando ticket...
+              </>
+            ) : (
+              "Criar Ticket"
+            )}
           </button>
         </form>
       </DialogContent>
