@@ -5,8 +5,10 @@ import {
   SummaryCardTitle,
   SummaryCardValue,
 } from "./summary-card";
+import { getTotalTickets } from "@/app/_data.access/tickets/get-total-tickets";
 
 const TotalTickets = async () => {
+  const totalTickets = await getTotalTickets();
   return (
     <SummaryCard>
       <SummaryCardTitle>Total de tickets</SummaryCardTitle>
@@ -14,7 +16,7 @@ const TotalTickets = async () => {
         <SummaryCardIcon>
           <Tickets />
         </SummaryCardIcon>
-        <SummaryCardValue>20</SummaryCardValue>
+        <SummaryCardValue>{totalTickets}</SummaryCardValue>
       </div>
     </SummaryCard>
   );
