@@ -13,18 +13,18 @@ export function AppSidebar() {
           </span>
         </a>
       </div>
-      <div className="flex flex-col gap-2 p-2 ">
+      <div className="flex flex-col gap-2 p-2">
         <SidebarButton href="/painel">
           <div className="flex gap-2 items-center">
-            <LayoutGridIcon color="white" />
-            <p className="text-xl text-[#ffffff]">Painel</p>
+            <LayoutGridIcon color="#1D161E" />
+            <p className="text-xl text-mauve-900">Painel</p>
           </div>
         </SidebarButton>
 
         <SidebarButton href="/tickets">
           <div className="flex gap-2 items-center">
-            <Ticket color="white" />
-            <p className="text-xl text-[#ffffff]">Tickets</p>
+            <Ticket color="#1D161E" />
+            <p className="text-xl text-mauve-900">Tickets</p>
           </div>
         </SidebarButton>
       </div>

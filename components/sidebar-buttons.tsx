@@ -13,9 +13,11 @@ const SidebarButton = ({ children, href }: SidebarButtonProps) => {
   return (
     <Button
       variant={pathName === `${href}` ? "siderbarHover" : "ghost"}
-      className="justify-start gap-2"
+      className="justify-start gap-2 w-full cursor-pointer"
     >
-      <Link href={href}>{children}</Link>
+      <Link href={href} className="w-full">
+        {children}
+      </Link>
     </Button>
   );
 };
