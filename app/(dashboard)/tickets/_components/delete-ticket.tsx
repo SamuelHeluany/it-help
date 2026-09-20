@@ -17,6 +17,7 @@ import { Trash } from "lucide-react";
 import { toast } from "sonner";
 
 const DeleteTicket = ({ id }: DeleteTicketSchema) => {
+  // função de deletar o ticket mas antes uma condição do ID.
   const handleDeleteTicket = async () => {
     if (!id) {
       return toast.error("Não foi possível identificar o ticket.");

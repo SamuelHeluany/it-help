@@ -7,6 +7,7 @@ export const updateTicketStatus = async ({
   id,
   status,
 }: UpdateTicketStatusSchema) => {
+  // update do status de aberto para resolvido e vice-versa
   const tickets = await createClient();
   updateTicketStatusSchema.parse({ id, status });
 

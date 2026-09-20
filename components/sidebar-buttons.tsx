@@ -8,6 +8,7 @@ interface SidebarButtonProps {
 }
 
 const SidebarButton = ({ children, href }: SidebarButtonProps) => {
+  // Deixar no sidebar o button selecionado na pagina que está
   const pathName = usePathname();
   return (
     <Button

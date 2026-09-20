@@ -34,6 +34,7 @@ interface CreateTicketProps {
 
 const CreateTicket = ({ userId, children }: CreateTicketProps) => {
   const [open, setOpen] = useState(false);
+  // react hook form
   const {
     control,
     handleSubmit,
@@ -50,6 +51,7 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
   });
 
   const onSubmit = async (data: CreateTicketsSchema) => {
+    // função para criar o ticket, passando o reset dos campos, fechando o modal e passando o toast de sucesso e erro quando der erro
     try {
       // Passa o objeto 'data' diretamente para a Server Action
       await createTicketsAction(data);
@@ -58,7 +60,7 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
       toast.success("Ticket criado com sucesso!");
     } catch (error) {
       console.error("Erro ao criar ticket:", error);
-      toast.error("Erro ao criar ticket:");
+      toast.error("Erro ao criar ticket.");
     }
   };
 

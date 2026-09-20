@@ -16,6 +16,7 @@ export const createTicketsAction = async (data: CreateTicketsSchema) => {
   const validatedData = createTicketsSchema.parse(data);
 
   try {
+    // insert do ticket passando os campos com zod e inserindo o usuário que criou o ticket
     await tickets
       .from("tickets")
       .insert({

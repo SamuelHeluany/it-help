@@ -8,6 +8,7 @@ export const deleteTicket = async ({ id }: DeleteTicketSchema) => {
   deleteTicketSchema.parse({ id });
 
   try {
+    // passa o delete do ticket por ID
     const { error } = await tickets.from("tickets").delete().eq("id", id);
 
     if (error) {

@@ -31,6 +31,7 @@ interface UpdateTicketProps {
 }
 
 const UpdateTicket = ({ ticket, open, onOpenChange }: UpdateTicketProps) => {
+  // react hook form do update do ticket
   const {
     register,
     handleSubmit,
@@ -46,6 +47,7 @@ const UpdateTicket = ({ ticket, open, onOpenChange }: UpdateTicketProps) => {
   });
 
   useEffect(() => {
+    // sempre atualizar o state do ticket quando abrir o modal  de update
     if (open) {
       reset({
         id: ticket.id,
@@ -56,6 +58,7 @@ const UpdateTicket = ({ ticket, open, onOpenChange }: UpdateTicketProps) => {
   }, [open, ticket, reset]);
 
   const onSubmit = async (data: UpdateTicketSchema) => {
+    // update do ticket
     try {
       // Passa o objeto 'data' diretamente para a Server Action
       await updateTicket(data);

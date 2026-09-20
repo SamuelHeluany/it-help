@@ -4,6 +4,7 @@ export const getTotalTicketsOpen = async () => {
   const tickets = await createClient();
 
   try {
+    // count de total de tickets que estão com status aberto
     const { count, error } = await tickets
       .from("tickets")
       .select("*", { count: "exact", head: true })

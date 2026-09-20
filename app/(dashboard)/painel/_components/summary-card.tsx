@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+// Criação do header
 
 export const SummaryCard = ({ children }: { children: ReactNode }) => {
   return <div className="rounded-xl bg-white p-6">{children}</div>;

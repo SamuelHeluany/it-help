@@ -19,6 +19,7 @@ import DropdownMenuAction from "./dropdownmenu-action";
 import { getTickets } from "@/app/_data.access/tickets/get-tickets";
 
 const TableColumn = async () => {
+  // map dos tickets apresentados em tela
   const { data: tickets } = await getTickets();
 
   return (

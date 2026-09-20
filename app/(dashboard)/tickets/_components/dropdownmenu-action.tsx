@@ -25,6 +25,7 @@ interface DropdownMenuActionProps {
 }
 
 const DropdownMenuAction = ({ ticket }: DropdownMenuActionProps) => {
+  // dropdown menu de actions
   const [editOpen, setEditOpen] = useState(false);
 
   return (

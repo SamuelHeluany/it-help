@@ -9,6 +9,7 @@ export const updateTicket = async (data: UpdateTicketSchema) => {
   updateTicketSchema.parse(data);
 
   try {
+    // passa a edição do ticket (titulo, descrição e a data do update do ticket) por id
     const { error } = await tickets
       .from("tickets")
       .update({
