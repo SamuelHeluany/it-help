@@ -1,5 +1,5 @@
 import { SidebarMenuButton } from "@/components/ui/sidebar";
-import { LayoutGridIcon, Ticket, User } from "lucide-react";
+import { LayoutGridIcon, Ticket } from "lucide-react";
 
 export function AppSidebar() {
   return (
@@ -11,27 +11,22 @@ export function AppSidebar() {
             <p className="text-white">-HELP</p>
           </span>
         </a>
-        {/* <h1 className="text-2xl font-bold">STOCKLY</h1> */}
       </div>
-      <div className="flex flex-col gap-2 p-2">
-        <SidebarMenuButton className="pb-3">
-          <a href="/painel" className="flex items-center text-xl gap-2">
+      <div className="flex flex-col gap-2 p-2 ">
+        <SidebarMenuButton className="pb-3 cursor-pointer">
+          <a href="/painel" className="flex w-full items-center text-xl gap-2">
             <LayoutGridIcon color="white" />
             <p className="text-white">Painel</p>
           </a>
         </SidebarMenuButton>
 
-        <SidebarMenuButton className="pb-3">
-          <a href="/tickets" className="flex items-center text-[20px] gap-2">
+        <SidebarMenuButton className="pb-3 cursor-pointer">
+          <a
+            href="/tickets"
+            className="flex w-full items-center text-[20px] gap-2"
+          >
             <Ticket color="white" />
             <p className="text-white">Tickets</p>
-          </a>
-        </SidebarMenuButton>
-
-        <SidebarMenuButton className="pb-3">
-          <a href="" className="flex items-center text-xl gap-2">
-            <User color="white" />
-            <p className="text-white">Usuários</p>
           </a>
         </SidebarMenuButton>
       </div>
