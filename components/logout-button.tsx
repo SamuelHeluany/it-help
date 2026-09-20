@@ -16,7 +16,7 @@ export function LogoutButton() {
   };
 
   return (
-    <Button className="h-5 p-0 " variant="ghost" onClick={logout}>
+    <Button className="h-5 p-0 cursor-pointer" variant="ghost" onClick={logout}>
       <LogOut />
       <p className="font-normal mr-20">Sair</p>
     </Button>
