@@ -5,7 +5,6 @@ import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/client";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -35,7 +34,7 @@ export function UpdatePasswordForm({
       const { error } = await supabase.auth.updateUser({ password });
       if (error) throw error;
       // Update this route to redirect to an authenticated route. The user already has an active session.
-      router.push("/dashboard");
+      router.push("/painel");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
@@ -47,29 +46,31 @@ export function UpdatePasswordForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Reset Your Password</CardTitle>
-          <CardDescription>
-            Please enter your new password below.
-          </CardDescription>
+          <CardTitle className="text-2xl">Alterar sua senha</CardTitle>
+          <CardDescription>Insira sua nova senha abaixo.</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleForgotPassword}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
-                <Label htmlFor="password">New password</Label>
+                <Label htmlFor="password">Nova senha</Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="New password"
+                  placeholder="Nova senha"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               {error && <p className="text-sm text-red-500">{error}</p>}
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Saving..." : "Save new password"}
-              </Button>
+              <button
+                type="submit"
+                className="w-full h-8 text-white bg-[#6E6CDF] text-[17px] cursor-pointer hover:bg-[#716ffc] rounded-sm"
+                disabled={isLoading}
+              >
+                {isLoading ? "Alterando..." : "Alterar senha"}
+              </button>
             </div>
           </form>
         </CardContent>

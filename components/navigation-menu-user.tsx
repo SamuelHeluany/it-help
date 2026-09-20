@@ -1,4 +1,4 @@
-import { Cog, User } from "lucide-react";
+import { Lock, User } from "lucide-react";
 import { LogoutButton } from "./logout-button";
 import {
   NavigationMenu,
@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import Link from "next/link";
 
 const DropDownMenuUser = () => {
   return (
@@ -19,10 +20,14 @@ const DropDownMenuUser = () => {
             Minha conta
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <NavigationMenuLink>
-              <Cog />
-              Configurações
-            </NavigationMenuLink>
+            <NavigationMenuLink
+              render={
+                <Link href="/update-password">
+                  <Lock />
+                  Alterar senha
+                </Link>
+              }
+            ></NavigationMenuLink>
             <NavigationMenuLink>
               <LogoutButton />
             </NavigationMenuLink>
