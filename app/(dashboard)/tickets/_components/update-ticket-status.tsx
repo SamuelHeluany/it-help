@@ -53,22 +53,14 @@ const UpdateTicketStatus = ({ id, status }: UpdateTicketStatusProps) => {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            {status === "aberto" ? (
-              <p>Deseja finalizar o ticket?</p>
-            ) : (
-              <p>Deseja reabrir o ticket?</p>
-            )}
+            {status === "aberto"
+              ? "Deseja finalizar o ticket?"
+              : "Deseja reabrir o ticket?"}
           </AlertDialogTitle>
           <AlertDialogDescription>
-            {status === "aberto" ? (
-              <p>
-                O ticket mudará seu status para <strong>RESOLVIDO!</strong>
-              </p>
-            ) : (
-              <p>
-                O ticket mudará seu status para <strong>ABERTO!</strong>
-              </p>
-            )}
+            {status === "aberto"
+              ? "O ticket mudará seu status para RESOLVIDO!"
+              : "O ticket mudará seu status para ABERTO!"}
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
