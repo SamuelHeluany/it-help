@@ -77,7 +77,7 @@ export function LoginForm({}: React.ComponentPropsWithoutRef<"div">) {
                 <div className="flex items-center">
                   <Label htmlFor="password">Senha</Label>
                   <Link
-                    href="/auth/forgot-password"
+                    href="/forgot-password"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline text-[#6E6CDF]"
                   >
                     Esqueceu sua senha?
@@ -105,7 +105,7 @@ export function LoginForm({}: React.ComponentPropsWithoutRef<"div">) {
             <div className="mt-4 text-center text-sm text-gray-400">
               Não tem uma conta?{" "}
               <Link
-                href="/auth/sign-up"
+                href="/sign-up"
                 className="underline underline-offset-4 text-[#6E6CDF]"
               >
                 Cadastre-se!

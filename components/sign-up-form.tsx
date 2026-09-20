@@ -38,7 +38,7 @@ export function SignUpForm({}: React.ComponentPropsWithoutRef<"div">) {
         },
       });
       if (error) throw error;
-      router.push("/auth/sign-up-success");
+      router.push("/sign-up-success");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
