@@ -10,10 +10,10 @@ export default function DashboardLayout({
 }) {
   return (
     <TooltipProvider>
-      <SidebarProvider>
+      <SidebarProvider className="min-h-screen w-full flex">
         {/* A Sidebar só existe AQUI dentro de (dashboard) */}
         <AppSidebar />
-        <main className="w-full bg-gray-200">
+        <main className="flex-1 min-h-screen bg-gray-200 flex flex-col">
           <div className="flex justify-end p-2">
             <DropDownMenuUser />
           </div>
