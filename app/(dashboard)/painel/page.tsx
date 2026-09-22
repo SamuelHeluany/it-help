@@ -19,7 +19,7 @@ export default async function ProtectedPage() {
   }
 
   return (
-    <div className="m-8 flex flex-col space-y-8 rounded-lg">
+    <div className="mt-20 mr-3 ml-3 mb-3flex flex-col space-y-8 rounded-lg">
       <Header>
         <HeaderLeft>
           <HeaderTitle>Painel</HeaderTitle>
