@@ -9,9 +9,15 @@ import TableColumn from "@/app/(dashboard)/tickets/_components/table-column";
 import { Plus } from "lucide-react";
 import CreateTicket from "./_components/create-ticket";
 import { createClient } from "@/lib/server";
+import { redirect } from "next/navigation";
 
 const Tickets = async () => {
   const supabase = await createClient();
+
+  const { data, error } = await supabase.auth.getClaims();
+  if (error || !data?.claims) {
+    redirect("/login");
+  }
   const {
     data: { user },
   } = await supabase.auth.getUser();
