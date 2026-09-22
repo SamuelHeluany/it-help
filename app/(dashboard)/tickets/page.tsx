@@ -16,7 +16,7 @@ const Tickets = async () => {
     data: { user },
   } = await supabase.auth.getUser();
   return (
-    <div className="m-8 p-6 flex flex-col space-y-8 rounded-lg bg-white">
+    <div className="mt-20 ml-3 mr-3 mb-3 p-6 flex flex-col space-y-8 rounded-lg bg-white">
       <Header>
         <HeaderLeft>
           <HeaderTitle>Chamados</HeaderTitle>
@@ -25,8 +25,8 @@ const Tickets = async () => {
         <HeaderRight>
           {/* O CreateTicket envolve o botão que você já criou */}
           <CreateTicket userId={user?.id}>
-            <span className="bg-blue-950 flex text-white w-30 h-10 items-center cursor-pointer rounded-sm justify-center hover:bg-blue-800 gap-1">
-              <Plus size={18} />
+            <span className="bg-blue-950 flex text-white md:w-30 md:h-10 items-center cursor-pointer rounded-sm justify-center hover:bg-blue-800 w-25 h-6 text-sm gap-0.5">
+              <Plus className="w-4 h-4 md:h-4.5 md:w-4.5" />
               Criar ticket
             </span>
           </CreateTicket>
