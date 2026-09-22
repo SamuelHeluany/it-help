@@ -49,7 +49,7 @@ export function SignUpForm({}: React.ComponentPropsWithoutRef<"div">) {
 
   return (
     <div className="flex justify-center">
-      <div className="relative w-150 h-175">
+      <div className="relative w-150 h-175 hidden lg:block">
         <Image
           src="/it-help-image-login.jpg"
           alt="Ilustração do Login de Suporte"
@@ -59,10 +59,10 @@ export function SignUpForm({}: React.ComponentPropsWithoutRef<"div">) {
         />
       </div>
 
-      <div className="w-150 h-175 rounded-r-lg bg-white shadow-[0_0_30px_rgba(0,0,0,0.15)] py-40">
-        <div className="w-full p-5 grid mx-19">
+      <div className="md:w-150 md:h-175 w-80 h-110 rounded-r-lg bg-white shadow-[0_0_30px_rgba(0,0,0,0.15)] md:py-40">
+        <div className="w-full md:p-5 grid md:mx-19 mx-5 my-5">
           <h2 className="text-2xl">Crie sua conta</h2>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-400 md:w-100 w-70">
             Crie sua conta ou entre com um email e senha.
           </p>
         </div>
@@ -73,7 +73,7 @@ export function SignUpForm({}: React.ComponentPropsWithoutRef<"div">) {
               <Input
                 id="email"
                 type="email"
-                className="text-[#757575] w-100"
+                className="text-[#757575] md:w-100 w-70"
                 placeholder="m@example.com"
                 required
                 value={email}
@@ -86,7 +86,7 @@ export function SignUpForm({}: React.ComponentPropsWithoutRef<"div">) {
               </div>
               <Input
                 id="password"
-                className="w-100"
+                className="md:w-100 w-70"
                 type="password"
                 placeholder="Senha"
                 required
@@ -100,7 +100,7 @@ export function SignUpForm({}: React.ComponentPropsWithoutRef<"div">) {
               </div>
               <Input
                 id="repeat-password"
-                className="w-100"
+                className="md:w-100 w-70"
                 placeholder="Repita a senha"
                 type="password"
                 required
@@ -111,7 +111,7 @@ export function SignUpForm({}: React.ComponentPropsWithoutRef<"div">) {
             {error && <p className="text-sm text-red-500">{error}</p>}
             <button
               type="submit"
-              className=" flex justify-center items-center w-100 h-8 text-white bg-[#6E6CDF] text-[16px] cursor-pointer hover:bg-[#716ffc] rounded-sm gap-1"
+              className=" flex justify-center items-center md:w-100 w-70 h-8 text-white bg-[#6E6CDF] text-[16px] cursor-pointer hover:bg-[#716ffc] rounded-sm gap-1"
               disabled={isLoading}
             >
               {isLoading ? (
