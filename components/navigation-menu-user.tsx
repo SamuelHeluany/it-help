@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const DropDownMenuUser = () => {
   return (
-    <NavigationMenu className="pr-5">
+    <NavigationMenu className="flex pt-3 fixed md:default">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="gap-1  text-black">

@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,11 +30,8 @@ const DropdownMenuAction = ({ ticket }: DropdownMenuActionProps) => {
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger
-          className="ml-2"
-          render={<Button className="w-7" variant="outline" />}
-        >
-          <EllipsisVertical />
+        <DropdownMenuTrigger render={<button className="w-7 cursor-pointer" />}>
+          <EllipsisVertical size={18} />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-40">
           <DropdownMenuGroup>
