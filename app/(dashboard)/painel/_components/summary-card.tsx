@@ -6,7 +6,7 @@ export const SummaryCard = ({ children }: { children: ReactNode }) => {
 };
 
 export const SummaryCardTitle = ({ children }: { children: ReactNode }) => {
-  return <p className="text-sm font-medium text-slate-500">{children}</p>;
+  return <span className="text-sm font-medium text-slate-500">{children}</span>;
 };
 
 export const SummaryCardIcon = ({ children }: { children: ReactNode }) => {
@@ -18,7 +18,9 @@ export const SummaryCardIcon = ({ children }: { children: ReactNode }) => {
 };
 
 export const SummaryCardValue = ({ children }: { children: ReactNode }) => {
-  return <p className="text-xl font-semibold text-slate-900">{children}</p>;
+  return (
+    <span className="text-xl font-semibold text-slate-900">{children}</span>
+  );
 };
 
 export default SummaryCard;
