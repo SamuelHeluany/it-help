@@ -45,13 +45,15 @@ export function ForgotPasswordForm({}: React.ComponentPropsWithoutRef<"div">) {
       {success ? (
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">Check Your Email</CardTitle>
-            <CardDescription>Password reset instructions sent</CardDescription>
+            <CardTitle className="text-2xl">Verifique seu email</CardTitle>
+            <CardDescription>
+              Instruções de redefinição de senha foram enviadas ao seu email.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              If you registered using your email and password, you will receive
-              a password reset email.
+              Se você tiver um email cadastrado, você vai receber uma
+              redefinição de senha.
             </p>
           </CardContent>
         </Card>
