@@ -88,6 +88,7 @@ const UpdateTicket = ({ ticket, open, onOpenChange }: UpdateTicketProps) => {
               {...register("title")}
               placeholder="Informe o título do ticket..."
               autoComplete="off"
+              className="max-w-80 sm:max-w-90"
             />
             {errors.title && <FieldError errors={[errors.title]} />}
           </Field>
@@ -99,13 +100,14 @@ const UpdateTicket = ({ ticket, open, onOpenChange }: UpdateTicketProps) => {
               {...register("description")}
               placeholder="Descreva o problema em detalhes..."
               autoComplete="off"
+              className="max-w-80 sm:max-w-90"
             />
             {errors.description && <FieldError errors={[errors.description]} />}
           </Field>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-[#5C64E1] w-full text-white px-4 py-2 cursor-pointer rounded font-medium disabled:opacity-50 hover:bg-[#5157b1]"
+            className="bg-[#5C64E1] w-80 sm:w-90 text-white px-4 py-2 cursor-pointer rounded font-medium disabled:opacity-50 hover:bg-[#5157b1]"
           >
             {isSubmitting ? "Editando..." : "Editar ticket"}
           </button>

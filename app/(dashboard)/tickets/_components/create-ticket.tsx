@@ -23,7 +23,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Spinner } from "@/components/ui/spinner";
@@ -50,6 +50,12 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
       created_by: userId ?? "",
     },
   });
+
+  useEffect(() => {
+    if (!open) {
+      reset();
+    }
+  }, [open, reset]);
 
   const onSubmit = async (data: CreateTicketsSchema) => {
     // função para criar o ticket, passando o reset dos campos, fechando o modal e passando o toast de sucesso e erro quando der erro
@@ -89,7 +95,7 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
                   placeholder="Ex: Botão de login não funciona"
                   autoComplete="off"
                   {...field}
-                  className="w-full"
+                  className="max-w-80 sm:max-w-90"
                 />
                 {fieldState.invalid && fieldState.error && (
                   <FieldError errors={[fieldState.error]} />
@@ -108,11 +114,12 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
                 <Textarea
                   {...field}
                   id={field.name}
+                  className="max-w-80 sm:max-w-90"
                   aria-invalid={fieldState.invalid}
                   placeholder="Descreva o problema em detalhes..."
                   autoComplete="off"
                 />
-                <FieldDescription>
+                <FieldDescription className="text-[13px]">
                   Forneça detalhes claros para ajudar na resolução.
                 </FieldDescription>
                 {fieldState.invalid && fieldState.error && (
@@ -132,7 +139,7 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="flex justify-center items-center w-full h-8 text-white bg-[#6E6CDF] text-[16px] cursor-pointer hover:bg-[#716ffc] rounded-sm gap-1"
+            className="flex justify-center items-center w-80 sm:w-90 h-8 text-white bg-[#6E6CDF] text-[16px] cursor-pointer hover:bg-[#716ffc] rounded-sm gap-1"
           >
             {isSubmitting ? (
               <>
