@@ -11,6 +11,10 @@ import CreateTicket from "./_components/create-ticket";
 import { createClient } from "@/lib/server";
 import { redirect } from "next/navigation";
 
+export const metadata = {
+  title: "Tickets",
+};
+
 const Tickets = async () => {
   const supabase = await createClient();
 

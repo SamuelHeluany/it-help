@@ -10,6 +10,10 @@ import TotalTickets from "./_components/total-tickets";
 import TotalTicketsOpen from "./_components/total-tickets-open";
 import TotalTicketsSolved from "./_components/total-tickets-solved";
 
+export const metadata = {
+  title: "Painel",
+};
+
 export default async function ProtectedPage() {
   const supabase = await createClient();
 

@@ -1,4 +1,7 @@
-import { UpdatePasswordForm } from '@/components/update-password-form'
+import { UpdatePasswordForm } from "@/components/update-password-form";
+export const metadata = {
+  title: "Alterar senha",
+};
 
 export default function Page() {
   return (
@@ -7,5 +10,5 @@ export default function Page() {
         <UpdatePasswordForm />
       </div>
     </div>
-  )
+  );
 }

@@ -2,6 +2,12 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"], display: "auto" });
+export const metadata = {
+  title: {
+    default: "ITHELP",
+    template: "%s | ITHELP",
+  },
+};
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
