@@ -30,7 +30,7 @@ const Tickets = async () => {
       <Header>
         <HeaderLeft>
           <HeaderTitle>Chamados</HeaderTitle>
-          <HeaderSubtitle>Chamados em aberto</HeaderSubtitle>
+          <HeaderSubtitle>Chamados criados</HeaderSubtitle>
         </HeaderLeft>
         <HeaderRight>
           <CreateTicket userId={user?.id}>
