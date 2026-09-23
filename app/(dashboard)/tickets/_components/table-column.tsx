@@ -53,17 +53,15 @@ const TableColumn = async () => {
           </div>
         ))}
       </div>
-      <div className="hidden md:block md:w-180 lg:w-full">
-        <Table className="min-h-120 md:w-180 lg:w-full">
+      <div className="hidden md:block sm:min-w-120 lg:w-full">
+        <Table className="min-h-120 lg:w-full">
           <TableHeader>
             <TableRow>
-              <TableHead className="hidden md:hidden lg:table-cell">
-                ID
-              </TableHead>
+              <TableHead className="hidden xl:table-cell">ID</TableHead>
               <TableHead>Título</TableHead>
               <TableHead>Descrição</TableHead>
               <TableHead>Status</TableHead>
-              <TableHead className="hidden md:hidden lg:table-cell">
+              <TableHead className="hidden xl:table-cell">
                 Data de criação
               </TableHead>
               <TableHead className="text-right">Ações</TableHead>
@@ -72,10 +70,12 @@ const TableColumn = async () => {
           <TableBody>
             {tickets?.map((ticket) => (
               <TableRow key={ticket.id}>
-                <TableCell className="hidden md:hidden lg:table-cell">
+                <TableCell className="hidden xl:table-cell ">
                   {ticket.id}
                 </TableCell>
-                <TableCell className="mr-2">{ticket.title}</TableCell>
+                <TableCell className="max-w-37.5 sm:max-w-50 whitespace-normal wrap-break-word">
+                  {ticket.title}
+                </TableCell>
                 <TableCell>
                   <Dialog>
                     <DialogTrigger
@@ -98,7 +98,7 @@ const TableColumn = async () => {
                 <TableCell className="whitespace-nowrap">
                   {ticket.status}
                 </TableCell>
-                <TableCell className="hidden md:hidden lg:table-cell">
+                <TableCell className="hidden lg:hidden xl:table-cell">
                   {new Date(ticket.created_at).toLocaleDateString("pt-BR")}
                 </TableCell>
                 <TableCell className="text-right">
