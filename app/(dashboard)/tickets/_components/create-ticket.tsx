@@ -84,11 +84,12 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel htmlFor={field.name}>Título</FieldLabel>
                 <Input
-                  {...field}
                   id={field.name}
                   aria-invalid={fieldState.invalid}
                   placeholder="Ex: Botão de login não funciona"
                   autoComplete="off"
+                  {...field}
+                  className="w-full"
                 />
                 {fieldState.invalid && fieldState.error && (
                   <FieldError errors={[fieldState.error]} />
@@ -131,7 +132,7 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="flex justify-center items-center w-90 h-8 text-white bg-[#6E6CDF] text-[16px] cursor-pointer hover:bg-[#716ffc] rounded-sm gap-1"
+            className="flex justify-center items-center w-full h-8 text-white bg-[#6E6CDF] text-[16px] cursor-pointer hover:bg-[#716ffc] rounded-sm gap-1"
           >
             {isSubmitting ? (
               <>
