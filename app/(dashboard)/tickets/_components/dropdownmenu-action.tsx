@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Edit, EllipsisVertical } from "lucide-react";
+import { ClipboardCopyIcon, Edit, EllipsisVertical } from "lucide-react";
 import DeleteTicket from "./delete-ticket";
 import UpdateTicketStatus from "./update-ticket-status";
 import UpdateTicket from "./update-ticket";
@@ -35,6 +35,14 @@ const DropdownMenuAction = ({ ticket }: DropdownMenuActionProps) => {
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-40">
           <DropdownMenuGroup>
+            <DropdownMenuItem
+              onClick={() => {
+                navigator.clipboard.writeText(ticket.id);
+              }}
+            >
+              <ClipboardCopyIcon />
+              Copiar ID
+            </DropdownMenuItem>
             <DropdownMenuItem
               onClick={(e) => {
                 e.preventDefault(); // evita conflito de foco com o fechamento do menu

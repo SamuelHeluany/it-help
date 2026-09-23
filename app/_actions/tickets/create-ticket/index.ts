@@ -29,4 +29,5 @@ export const createTicketsAction = async (data: CreateTicketsSchema) => {
     console.error("Erro ao criar ticket no supabase", error);
   }
   revalidatePath("/tickets");
+  revalidatePath("/painel");
 };
