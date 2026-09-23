@@ -26,7 +26,7 @@ const Tickets = async () => {
     data: { user },
   } = await supabase.auth.getUser();
   return (
-    <div className="mt-20 ml-3 mr-3 mb-3 p-6 flex flex-col space-y-8 rounded-lg bg-white">
+    <div className="mt-20 w-full p-6 grid space-y-8 rounded-lg bg-white">
       <Header>
         <HeaderLeft>
           <HeaderTitle>Chamados</HeaderTitle>

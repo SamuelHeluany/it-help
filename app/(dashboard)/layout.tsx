@@ -14,7 +14,7 @@ export default function DashboardLayout({
         {/* A Sidebar só existe AQUI dentro de (dashboard) */}
         <AppSidebar />
         <main className="flex-1 min-h-screen bg-gray-200 flex flex-col">
-          <div className="flex justify-end p-2">
+          <div className="flex justify-end">
             <DropDownMenuUser />
           </div>
 

@@ -114,7 +114,7 @@ const CreateTicket = ({ userId, children }: CreateTicketProps) => {
                 <Textarea
                   {...field}
                   id={field.name}
-                  className="max-w-80 sm:max-w-90 resize-none"
+                  className="max-w-80 max-h-60 sm:max-w-90 sm:max-h-90 resize-none"
                   aria-invalid={fieldState.invalid}
                   placeholder="Descreva o problema em detalhes..."
                   autoComplete="off"
