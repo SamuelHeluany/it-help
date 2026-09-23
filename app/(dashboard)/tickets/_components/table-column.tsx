@@ -38,14 +38,14 @@ const TableColumn = async () => {
             <div className="bg-gray-700 w-full border"></div>
             <div className="grid justify-start w-full ml-2 mr-2">
               <span className="text-[12px] gap-1 pr-2">
-                Título:{" "}
-                <p className="text-slate-600 text-[12px] pr-1">
+                Título:
+                <p className="text-slate-600 text-[12px] pr-5 w-80 whitespace-normal wrap-break-word">
                   {ticket.title}
                 </p>
               </span>
               <span className="text-[12px] mt-2 pr-2">
                 Descrição:
-                <p className="text-slate-600 text-[12px] pr-1 pb-2">
+                <p className="text-slate-600 text-[12px] pr-5 w-80 whitespace-normal wrap-break-word">
                   {ticket.description}
                 </p>
               </span>
@@ -53,9 +53,9 @@ const TableColumn = async () => {
           </div>
         ))}
       </div>
-      <div className="hidden md:block sm:min-w-120 lg:w-full">
-        <Table className="lg:w-full">
-          <TableHeader>
+      <div className="hidden md:block max-h-150 overflow-y-auto w-full">
+        <Table className="w-full relative">
+          <TableHeader className="sticky top-0 bg-background z-10 shadow-sm">
             <TableRow>
               <TableHead className="hidden xl:table-cell">ID</TableHead>
               <TableHead>Título</TableHead>
@@ -88,7 +88,7 @@ const TableColumn = async () => {
                     <DialogContent>
                       <DialogHeader>
                         <DialogTitle>Descrição do ticket</DialogTitle>
-                        <DialogDescription>
+                        <DialogDescription className="w-90 whitespace-normal wrap-break-word">
                           {ticket.description}
                         </DialogDescription>
                       </DialogHeader>

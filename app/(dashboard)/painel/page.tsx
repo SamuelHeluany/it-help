@@ -68,7 +68,7 @@ export default async function ProtectedPage() {
         <Link href="/update-password" className="flex gap-1">
           <button className="bg-blue-950 flex text-white md:w-30 md:h-10 items-center cursor-pointer rounded-sm justify-center hover:bg-blue-800 w-25 h-8 text-sm gap-0.5">
             <Lock className="w-4 h-4 md:h-4.5 md:w-4.5" />
-            <p className="text-[12px] sm:text-sm">Alterar senha</p>
+            <p className="text-[12px] lg:text-sm">Alterar senha</p>
           </button>
         </Link>
       </div>
