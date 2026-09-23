@@ -100,7 +100,7 @@ const UpdateTicket = ({ ticket, open, onOpenChange }: UpdateTicketProps) => {
               {...register("description")}
               placeholder="Descreva o problema em detalhes..."
               autoComplete="off"
-              className="max-w-80 sm:max-w-90"
+              className="max-w-80 sm:max-w-90 resize-none"
             />
             {errors.description && <FieldError errors={[errors.description]} />}
           </Field>
