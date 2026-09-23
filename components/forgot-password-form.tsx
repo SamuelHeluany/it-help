@@ -29,7 +29,7 @@ export function ForgotPasswordForm({}: React.ComponentPropsWithoutRef<"div">) {
 
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: "/update-password",
+        redirectTo: `${window.location.origin}/callback?next=/update-password`,
       });
       if (error) throw error;
       setSuccess(true);
