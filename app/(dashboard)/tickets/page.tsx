@@ -33,7 +33,6 @@ const Tickets = async () => {
           <HeaderSubtitle>Chamados em aberto</HeaderSubtitle>
         </HeaderLeft>
         <HeaderRight>
-          {/* O CreateTicket envolve o botão que você já criou */}
           <CreateTicket userId={user?.id}>
             <span className="bg-blue-950 flex text-white md:w-30 md:h-10 items-center cursor-pointer rounded-sm justify-center hover:bg-blue-800 w-25 h-6 text-sm gap-0.5">
               <Plus className="w-4 h-4 md:h-4.5 md:w-4.5" />
