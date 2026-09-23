@@ -12,6 +12,8 @@ import TotalTicketsSolved from "./_components/total-tickets-solved";
 import CreateTicket from "../tickets/_components/create-ticket";
 import { Lock, Plus } from "lucide-react";
 import Link from "next/link";
+import { Suspense } from "react";
+import LoadingFallback from "../tickets/_components/loading-fallback";
 
 export const metadata = {
   title: "Painel",
@@ -39,9 +41,15 @@ export default async function ProtectedPage() {
       </Header>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <TotalTickets />
-        <TotalTicketsOpen />
-        <TotalTicketsSolved />
+        <Suspense fallback={<LoadingFallback />}>
+          <TotalTickets />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <TotalTicketsOpen />
+        </Suspense>
+        <Suspense fallback={<LoadingFallback />}>
+          <TotalTicketsSolved />
+        </Suspense>
       </div>
 
       <Header>
