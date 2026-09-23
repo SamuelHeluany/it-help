@@ -45,7 +45,7 @@ const TableColumn = async () => {
               </span>
               <span className="text-[12px] mt-2 pr-2">
                 Descrição:
-                <p className="text-slate-600 text-[12px] pr-1">
+                <p className="text-slate-600 text-[12px] pr-1 pb-2">
                   {ticket.description}
                 </p>
               </span>
@@ -54,7 +54,7 @@ const TableColumn = async () => {
         ))}
       </div>
       <div className="hidden md:block sm:min-w-120 lg:w-full">
-        <Table className="min-h-120 lg:w-full">
+        <Table className="lg:w-full">
           <TableHeader>
             <TableRow>
               <TableHead className="hidden xl:table-cell">ID</TableHead>
