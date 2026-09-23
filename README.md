@@ -74,10 +74,6 @@ Contribuições são muito bem-vindas\! Se quiser contribuir:
 4. Faça o push para a sua branch (git push origin feature/sua-feature).
 5. Abra um **Pull Request**.
 
-## **📝 Licença**
-
-Este projeto é mantido sob a licença [MIT](http://docs.google.com/LICENSE).
-
 ## **👨‍💻 Autor**
 
 Desenvolvido por Samuel Heluany
