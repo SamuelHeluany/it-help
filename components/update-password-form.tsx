@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/client";
 import {
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ArrowLeft } from "lucide-react";
 
 export function UpdatePasswordForm({
   className,
@@ -33,7 +33,6 @@ export function UpdatePasswordForm({
     try {
       const { error } = await supabase.auth.updateUser({ password });
       if (error) throw error;
-      // Update this route to redirect to an authenticated route. The user already has an active session.
       router.push("/painel");
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
@@ -46,7 +45,18 @@ export function UpdatePasswordForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Alterar sua senha</CardTitle>
+          <div className="flex justify-between">
+            <CardTitle className="text-2xl">Alterar sua senha</CardTitle>
+            <button
+              type="button"
+              className="flex justify-center items-center w-25 h-8 text-white bg-[#6E6CDF] text-[14px] cursor-pointer hover:bg-[#716ffc] rounded-sm gap-1"
+              onClick={() => router.back()}
+            >
+              <ArrowLeft size={15} />
+              Voltar
+            </button>
+          </div>
+
           <CardDescription>Insira sua nova senha abaixo.</CardDescription>
         </CardHeader>
         <CardContent>
