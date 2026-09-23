@@ -32,7 +32,7 @@ export default async function ProtectedPage() {
   } = await supabase.auth.getUser();
 
   return (
-    <div className="mt-20 mr-3 ml-3 mb-3flex flex-col space-y-8 rounded-lg">
+    <div className="mt-15 mr-3 ml-3 flex flex-col space-y-8 rounded-lg">
       <Header>
         <HeaderLeft>
           <HeaderTitle>Painel</HeaderTitle>

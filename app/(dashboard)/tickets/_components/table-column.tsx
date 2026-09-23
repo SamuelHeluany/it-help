@@ -23,7 +23,7 @@ const TableColumn = async () => {
 
   return (
     <div className="w-full">
-      <div className="flex flex-col gap-4 md:hidden">
+      <div className="flex flex-col gap-4 md:hidden pt-4">
         {tickets?.map((ticket) => (
           <div
             key={ticket.id}
@@ -73,7 +73,7 @@ const TableColumn = async () => {
                 <TableCell className="hidden xl:table-cell ">
                   {ticket.id}
                 </TableCell>
-                <TableCell className="max-w-37.5 sm:max-w-50 whitespace-normal wrap-break-word">
+                <TableCell className="break-all whitespace-normal pr-4 max-w-80">
                   {ticket.title}
                 </TableCell>
                 <TableCell>
@@ -88,7 +88,7 @@ const TableColumn = async () => {
                     <DialogContent>
                       <DialogHeader>
                         <DialogTitle>Descrição do ticket</DialogTitle>
-                        <DialogDescription className="w-90 whitespace-normal wrap-break-word">
+                        <DialogDescription className="break-all pt-2">
                           {ticket.description}
                         </DialogDescription>
                       </DialogHeader>
